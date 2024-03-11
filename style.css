@@ -225,12 +225,12 @@ body {
 }
 
 .main-section img{
+  margin: 100px;
   width: 30%;
   border: 2px solid #f0e4e4;
   border-radius: 20px;
   position: relative;
 }
-
 .main-section-about h1{
   margin-bottom: 1rem;
   color: #147efb;
