@@ -231,6 +231,7 @@ body {
   border-radius: 20px;
   position: relative;
 }
+
 .main-section-about h1{
   margin-bottom: 1rem;
   color: #147efb;
@@ -267,7 +268,6 @@ body {
   text-align: center;
   margin-bottom: 250px;
 }
-
 .main-projetos p{
   font-size: 1.5rem;
   color: rgb(105, 102, 102);
@@ -286,7 +286,7 @@ body {
   border-radius: 5px;
   text-align: center;
   box-shadow: 0 2px 8px #6c6ace;
-  background-image: url(Imagens/o-que-e-landing-page-1024x753_resized.jpg);
+  background-image: url(/Projeto/Imagens/landpage1.png);
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -303,7 +303,7 @@ body {
   border-radius: 5px;
   text-align: center;
   box-shadow: 0 2px 8px #6c6ace;
-  background-image: url(Imagens/o-que-e-landing-page-1024x753_resized.jpg);
+  background-image: url(/Projeto/Imagens/o-que-e-landing-page-1024x753.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -326,12 +326,24 @@ body {
   background-color: #e5e5e5;
   padding: 16px;
   justify-content: space-evenly;
-  font-size: 2.5rem;;
+  font-size: 2.5rem;
+  align-items: center;
 }
 
 .list-item-action a{
-  color: #000000;
+  justify-content: center;
+  width: 100px;
+  height: 100%;
+  background: #ffffff;
+  color: #020002;
+  border: 2px solid #472ea1;
+  border-radius: 8px;
+  font-size: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
+
 .footer-fim{
   background-color: #2d2e32;
   padding: 5rem 0;
