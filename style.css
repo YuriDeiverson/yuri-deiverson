@@ -29,7 +29,7 @@
   }
 
   .hero  img{
-    max-width: 100%;
+    display: none;
   }
 
   .main-section {
