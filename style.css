@@ -353,6 +353,10 @@ body {
   letter-spacing: 1px;
 }
 
+.list-item-action a:hover{
+  background-color: #85a1da;
+}
+
 .list-item-content{
   margin-top: 12%;
 }
