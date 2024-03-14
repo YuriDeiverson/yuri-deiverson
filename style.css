@@ -282,7 +282,7 @@ body {
 }
 
 .list-item{
-  flex-basis: 280px;
+  flex-basis: 300px;
   border-radius: 5px;
   text-align: center;
   box-shadow: 0 2px 8px #6c6ace;
@@ -293,38 +293,47 @@ body {
 
 .list-item-imagem img{
   border-radius: 50%;
-  width: 80px;
+  width: 105px;
   margin-top: 160px;
   padding: 5px;
 }
 
 .list-item-dois{
-  flex-basis: 280px;
+  flex-basis: 300px;
   border-radius: 5px;
   text-align: center;
   box-shadow: 0 2px 8px #6c6ace;
-  background-image: url(Imagens/landpageDemon.png);
+  background-image: url(Imagens/o-que-e-landing-page-1024x753_resized.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
 }
 
-.list-item-dois img{
+.list-item-tres{
+  flex-basis: 300px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 2px 8px #6c6ace;
+  background-image: url(Imagens/art-4.jpg);
+  background-size: 140%;
+  background-repeat: no-repeat;
+}
+
+.list-item-tres img{
   border-radius: 50%;
-  width: 80px;
+  width: 105px;
   margin-top: 160px;
   padding: 5px;
 }
 
 .list-item-name{
   margin: 0;
-  font-size: 35px;
-  padding-bottom: 30px;
+  font-size: 30px;
+  padding-bottom: 70px;
 }
 
 .list-item-action{
   display: flex;
-  background-color: #e5e5e5;
-  padding: 16px;
+  padding: 25px;
   justify-content: space-evenly;
   font-size: 2.5rem;
   align-items: center;
@@ -332,16 +341,20 @@ body {
 
 .list-item-action a{
   justify-content: center;
-  width: 100px;
+  width: 119px;
   height: 100%;
   background: #ffffff;
   color: #020002;
   border: 2px solid #472ea1;
   border-radius: 8px;
-  font-size: 25px;
+  font-size: 22px;
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 1px;
+}
+
+.list-item-content{
+  margin-top: 12%;
 }
 
 .footer-fim{
