@@ -5,6 +5,45 @@
   font-family: 'Times New Roman', Times, serif;
 }
 
+@media  screen and (min-width: 1200px) 
+{
+  nav{
+    padding: 0 60px;
+  }
+
+  .header {
+    width: 50%;
+  }
+  .logo{
+    padding: 100px 60px 0;
+  }
+}
+
+@media  screen and (max-width: 576px) 
+{
+  nav{
+    display: none;
+  }
+  .home-content{
+    display: block;
+  }
+
+  .hero  img{
+    max-width: 100%;
+  }
+
+  .main-section {
+    font-size: 14px;
+    margin: 20px;
+  }
+  .main-section img{
+    display: none;
+  }
+  .logo{
+    padding: 100px 60px 0;
+  }
+}
+
 body {
   width: 100%;
   scrollbar-color: #8e8e8e #fff;
