@@ -302,25 +302,47 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 200px;
+  gap: 250px;
   list-style-type: none;
+
 }
 
 .list-item{
   flex-basis: 300px;
   border-radius: 5px;
   text-align: center;
+  flex-wrap: wrap;
   box-shadow: 0 2px 8px #6c6ace;
-  background-image: url(Imagens/landpage1.png);
-  background-size: 100%;
+  background-image: url(Imagens/mkt.png);
+  background-size: 155%;
   background-repeat: no-repeat;
 }
 
-.list-item-imagem img{
-  border-radius: 50%;
-  width: 105px;
-  margin-top: 160px;
-  padding: 5px;
+.list-item-action-mkt{
+  display: flex;
+  padding-top: 100%;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+  align-items: center;
+  margin: 5px;
+}
+
+.list-item-action-mkt a{
+  justify-content: center;
+  width: 120px;
+  height: 100%;
+  background: #ffffff;
+  color: #020002;
+  border: 2px solid #472ea1;
+  border-radius: 8px;
+  font-size: 22px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.list-item-action-mkt a:hover{
+  background-color: #85a1da;
 }
 
 .list-item-dois{
@@ -328,43 +350,21 @@ body {
   border-radius: 5px;
   text-align: center;
   box-shadow: 0 2px 8px #6c6ace;
-  background-image: url(Imagens/o-que-e-landing-page-1024x753_resized.jpg);
+  background-image: url(Imagens/landpage2.png);
   background-size: 100%;
   background-repeat: no-repeat;
 }
 
-.list-item-tres{
-  flex-basis: 300px;
-  border-radius: 5px;
-  text-align: center;
-  box-shadow: 0 2px 8px #6c6ace;
-  background-image: url(Imagens/art-4.jpg);
-  background-size: 140%;
-  background-repeat: no-repeat;
-}
-
-.list-item-tres img{
-  border-radius: 50%;
-  width: 105px;
-  margin-top: 160px;
-  padding: 5px;
-}
-
-.list-item-name{
-  margin: 0;
-  font-size: 30px;
-  padding-bottom: 70px;
-}
-
-.list-item-action{
+.list-item-action-bot{
   display: flex;
-  padding: 25px;
+  padding-top: 100%;
   justify-content: space-evenly;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   align-items: center;
+  margin: 5px;
 }
 
-.list-item-action a{
+.list-item-action-bot a{
   justify-content: center;
   width: 119px;
   height: 100%;
@@ -378,13 +378,157 @@ body {
   letter-spacing: 1px;
 }
 
-.list-item-action a:hover{
+.list-item-action-bot a:hover{
   background-color: #85a1da;
 }
 
-.list-item-content{
-  margin-top: 12%;
+.list-item-tres{
+  flex-basis: 300px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 2px 8px #6c6ace;
+  background-image: url(Imagens/o-que-e-landing-page-1024x753.jpg);
+  background-size: 108%;
+  background-repeat: no-repeat;
 }
+
+.list-item-action-dash{
+  display: flex;
+  padding-top: 100%;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+  align-items: center;
+  margin: 5px;
+}
+
+.list-item-action-dash a{
+  justify-content: center;
+  width: 119px;
+  height: 100%;
+  background: #ffffff;
+  color: #020002;
+  border: 2px solid #472ea1;
+  border-radius: 8px;
+  font-size: 22px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.list-item-action-dash a:hover{
+  background-color: #85a1da;
+}
+
+.list-item-quatro{
+  flex-basis: 300px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 2px 8px #6c6ace;
+  background-image: url(Imagens/desenhar.png);
+  background-size: 105%;
+  background-repeat: no-repeat;
+}
+
+.list-item-action-desenhar{
+  display: flex;
+  padding-top: 100%;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+  align-items: center;
+  margin: 5px;
+}
+
+.list-item-action-desenhar a{
+  justify-content: center;
+  width: 119px;
+  height: 100%;
+  background: #ffffff;
+  color: #020002;
+  border: 2px solid #472ea1;
+  border-radius: 8px;
+  font-size: 22px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.list-item-action-desenhar a:hover{
+  background-color: #85a1da;
+}
+
+.list-item-cinco{
+  flex-basis: 300px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 2px 8px #6c6ace;
+  background-image: url(Imagens/landpage1.png);
+  background-size: 105%;
+  background-repeat: no-repeat;
+}
+
+.list-item-action-adv{
+  display: flex;
+  padding-top: 100%;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+  align-items: center;
+  margin: 5px;
+}
+
+.list-item-action-adv a{
+  justify-content: center;
+  width: 119px;
+  height: 100%;
+  background: #ffffff;
+  color: #020002;
+  border: 2px solid #472ea1;
+  border-radius: 8px;
+  font-size: 22px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.list-item-action-adv a:hover{
+  background-color: #85a1da;
+}
+.list-item-seis{
+  flex-basis: 300px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 2px 8px #6c6ace;
+  background-image: url(Imagens/app_mete.png);
+  background-size: 105%;
+  background-repeat: no-repeat;
+}
+
+.list-item-action-app {
+  display: flex;
+  padding-top: 100%;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+  align-items: center;
+  margin: 5px;
+}
+
+.list-item-action-app a{
+  justify-content: center;
+  width: 119px;
+  height: 100%;
+  background: #ffffff;
+  color: #020002;
+  border: 2px solid #472ea1;
+  border-radius: 8px;
+  font-size: 22px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.list-item-action-app a:hover{
+  background-color: #85a1da;
+}
+
 
 .footer-fim{
   background-color: #2d2e32;
