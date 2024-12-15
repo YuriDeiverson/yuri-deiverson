@@ -2,31 +2,76 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Times New Roman', Times, serif, "Arial", sans-serif;;
 }
 
-@media  screen and (max-width: 576px) 
-{
-  nav{
-    display: none;
-  }
-  .home-content{
-    display: block;
-  }
-
-  .hero  img{
-    display: none;
+@media (max-width: 768px) {
+  .home {
+    display: flex;
+    flex-direction: column; /* Coloca os itens em coluna no mobile */
+    justify-content: center; /* Centraliza os itens */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px; /* Ajusta o padding para mobile */
   }
 
+  .home-content {
+    margin-top: 20px;
+    text-align: center; /* Centraliza o texto no mobile */
+  }
+
+  .hero {
+    margin-top: 100px; /* Dá espaço acima da foto */
+    display: flex;
+    justify-content: center; /* Centraliza a foto */
+    margin-bottom: 20px; /* Dá espaço abaixo da foto */
+  }
+  
+  .home-sci a {
+    display: none !important;
+  }
+
+  /* Ajuste o tamanho da foto para o mobile */
+  .hero-foto {
+    width: 100px; /* Ajusta o tamanho da foto no mobile */
+    height: 150px;
+    border-radius: 50%; /* Foto circular */
+  }
+  
   .main-section {
-    font-size: 14px;
-    margin: 20px;
+    padding: 10px 15px;  /* Reduzido o padding superior para diminuir a margem */
+    margin-top: -200px;    /* Diminui a brecha entre a foto (que foi escondida) e o texto "Sobre mim" */
   }
-  .main-section img{
-    display: none;
+
+  .main-section img {
+    display: none; /* Esconde a imagem no mobile */
   }
-  .logo{
-    display: none;
+
+  .main-section-about {
+    text-align: left; /* Alinha o texto à esquerda */
+    font-size: 1.5rem; /* Aumenta o tamanho da fonte no mobile */
+    margin-top: 20px;
+    padding: 10px; /* Padding dentro da div para espaçamento */
+  }
+
+  .about-me {
+    font-size: 2rem; /* Aumenta o tamanho da fonte do título */
+    margin-bottom: 15px; /* Distância entre o título e o parágrafo */
+  }
+
+  .main-section-about p {
+    line-height: 1.6;
+    font-size: 1.2rem; /* Aumenta o tamanho do texto */
+    max-width: 100%; /* Permite o texto ocupar toda a largura */
+    margin: 0; /* Remove margens extras */
+  }
+
+  .fade-in {
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
   }
 }
 
@@ -75,26 +120,30 @@ body {
 
 .home{
   display: flex;
-  height: 100vh;
+  justify-content: space-between;
   align-items: center;
-  padding: 0 10%;
-  background-size: cover;
+  padding: 100px 10%; /* Ajusta o espaçamento do conteúdo */
+  margin-top: 100px; /* Adiciona um espaçamento no topo */
   
 }
 
 .home-content{
-  width: 200%;
+  flex: 1;
+  text-align: left;
+}
+
+.hero{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .hero-foto{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  right: x;
-  border: 2px solid #5f5b5a;
-  border-radius: 300px; 
+  width: 450px; /* Mantém o tamanho da foto */
+  height: 450px; /* Garante que a foto seja circular */
+  border-radius: 50%; /* Deixa a foto em formato circular */
+  border: 5px solid #472ea1; /* Mantém a borda da foto */
+  object-fit: cover; /* Garante que a foto se ajuste corretamente */
 }
 
 
@@ -176,13 +225,14 @@ body {
 }
 
 .home-sci{
-  position: absolute;
-  bottom: 40px;
-  width: 170px;
   display: flex;
-  right: 5px;
-  left: 49%;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  bottom: 20px;
+  left: 47%;
+
 }
 
 .home-sci a{
@@ -302,32 +352,49 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 250px;
+  gap: 350px;
   list-style-type: none;
 
 }
 
-.list-item{
+.list-item {
   flex-basis: 300px;
   border-radius: 5px;
   text-align: center;
-  flex-wrap: wrap;
-  box-shadow: 0 2px 8px #6c6ace;
+  box-shadow: 0 2px 10px #6c6ace;
   background-image: url(Imagens/mkt.png);
-  background-size: 155%;
+  background-size: 150%;
   background-repeat: no-repeat;
-}
-
-.list-item-action-mkt{
+  padding: 40px 10px 20px; /* Ajuste o padding superior e inferior */
+  position: relative;
   display: flex;
-  padding-top: 100%;
-  justify-content: space-evenly;
-  font-size: 1.5rem;
-  align-items: center;
-  margin: 5px;
+  flex-direction: column;
+  justify-content: flex-start; /* Garante que os itens fiquem empilhados */
+  height: 400px; /* Aumenta a altura da div para criar mais espaço para o texto */
 }
 
-.list-item-action-mkt a{
+.list-item-title {
+  font-size: 1.2rem;  /* Ajuste o tamanho da fonte conforme necessário */
+  color: #000000;  /* Cor do texto, pode ser ajustado */
+  font-weight: bold;
+  margin-top: 15rem;  /* Desce o texto para mais abaixo */
+  margin-bottom: 1rem;  /* Espaçamento entre o nome e os links */
+}
+
+.list-item-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os itens */
+}
+
+.list-item-links {
+  display: flex;
+  justify-content: center; /* Centraliza os links */
+  gap: 20px; /* Adiciona espaçamento entre os links */
+  margin-top: 1rem; /* Adiciona espaçamento entre o nome e os links */
+}
+
+.list-item-action a {
   justify-content: center;
   width: 120px;
   height: 100%;
@@ -339,195 +406,101 @@ body {
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 1px;
+  padding: 10px 3px;  /* Adicionando espaçamento interno para dar mais espaço */
+  line-height: .5; /* Ajuste o line-height para dar mais "altura" ao link */
 }
 
-.list-item-action-mkt a:hover{
+.list-item-action a:hover {
   background-color: #85a1da;
 }
+
 
 .list-item-dois{
   flex-basis: 300px;
   border-radius: 5px;
   text-align: center;
-  box-shadow: 0 2px 8px #6c6ace;
+  box-shadow: 0 2px 10px #6c6ace;
   background-image: url(Imagens/landpage2.png);
   background-size: 100%;
   background-repeat: no-repeat;
-}
-
-.list-item-action-bot{
+  padding: 40px 10px 20px; /* Ajuste o padding superior e inferior */
+  position: relative;
   display: flex;
-  padding-top: 100%;
-  justify-content: space-evenly;
-  font-size: 1.5rem;
-  align-items: center;
-  margin: 5px;
+  flex-direction: column;
+  justify-content: flex-start; /* Garante que os itens fiquem empilhados */
+  height: 400px; /* Aumenta a altura da div para criar mais espaço para o texto */
 }
 
-.list-item-action-bot a{
-  justify-content: center;
-  width: 119px;
-  height: 100%;
-  background: #ffffff;
-  color: #020002;
-  border: 2px solid #472ea1;
-  border-radius: 8px;
-  font-size: 22px;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-.list-item-action-bot a:hover{
-  background-color: #85a1da;
-}
 
 .list-item-tres{
   flex-basis: 300px;
   border-radius: 5px;
   text-align: center;
-  box-shadow: 0 2px 8px #6c6ace;
+  box-shadow: 0 2px 10px #6c6ace;
   background-image: url(Imagens/o-que-e-landing-page-1024x753.jpg);
-  background-size: 108%;
+  background-size: 105%;
   background-repeat: no-repeat;
-}
-
-.list-item-action-dash{
+  padding: 40px 10px 20px; /* Ajuste o padding superior e inferior */
+  position: relative;
   display: flex;
-  padding-top: 100%;
-  justify-content: space-evenly;
-  font-size: 1.5rem;
-  align-items: center;
-  margin: 5px;
+  flex-direction: column;
+  justify-content: flex-start; /* Garante que os itens fiquem empilhados */
+  height: 400px; /* Aumenta a altura da div para criar mais espaço para o texto */
 }
 
-.list-item-action-dash a{
-  justify-content: center;
-  width: 119px;
-  height: 100%;
-  background: #ffffff;
-  color: #020002;
-  border: 2px solid #472ea1;
-  border-radius: 8px;
-  font-size: 22px;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-.list-item-action-dash a:hover{
-  background-color: #85a1da;
-}
 
 .list-item-quatro{
   flex-basis: 300px;
   border-radius: 5px;
   text-align: center;
-  box-shadow: 0 2px 8px #6c6ace;
+  box-shadow: 0 2px 10px #6c6ace;
   background-image: url(Imagens/desenhar.png);
   background-size: 105%;
   background-repeat: no-repeat;
-}
-
-.list-item-action-desenhar{
+  padding: 40px 10px 20px; /* Ajuste o padding superior e inferior */
+  position: relative;
   display: flex;
-  padding-top: 100%;
-  justify-content: space-evenly;
-  font-size: 1.5rem;
-  align-items: center;
-  margin: 5px;
+  flex-direction: column;
+  justify-content: flex-start; /* Garante que os itens fiquem empilhados */
+  height: 400px; /* Aumenta a altura da div para criar mais espaço para o texto */
 }
 
-.list-item-action-desenhar a{
-  justify-content: center;
-  width: 119px;
-  height: 100%;
-  background: #ffffff;
-  color: #020002;
-  border: 2px solid #472ea1;
-  border-radius: 8px;
-  font-size: 22px;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
 
-.list-item-action-desenhar a:hover{
-  background-color: #85a1da;
-}
 
 .list-item-cinco{
   flex-basis: 300px;
   border-radius: 5px;
   text-align: center;
-  box-shadow: 0 2px 8px #6c6ace;
+  box-shadow: 0 2px 10px #6c6ace;
   background-image: url(Imagens/landpage1.png);
   background-size: 105%;
   background-repeat: no-repeat;
-}
-
-.list-item-action-adv{
+  padding: 40px 10px 20px; /* Ajuste o padding superior e inferior */
+  position: relative;
   display: flex;
-  padding-top: 100%;
-  justify-content: space-evenly;
-  font-size: 1.5rem;
-  align-items: center;
-  margin: 5px;
+  flex-direction: column;
+  justify-content: flex-start; /* Garante que os itens fiquem empilhados */
+  height: 400px; /* Aumenta a altura da div para criar mais espaço para o texto */
 }
 
-.list-item-action-adv a{
-  justify-content: center;
-  width: 119px;
-  height: 100%;
-  background: #ffffff;
-  color: #020002;
-  border: 2px solid #472ea1;
-  border-radius: 8px;
-  font-size: 22px;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
 
-.list-item-action-adv a:hover{
-  background-color: #85a1da;
-}
 .list-item-seis{
   flex-basis: 300px;
   border-radius: 5px;
   text-align: center;
-  box-shadow: 0 2px 8px #6c6ace;
+  box-shadow: 0 2px 10px #6c6ace;
   background-image: url(Imagens/app_mete.png);
   background-size: 105%;
   background-repeat: no-repeat;
-}
-
-.list-item-action-app {
+  padding: 40px 10px 20px; /* Ajuste o padding superior e inferior */
+  position: relative;
   display: flex;
-  padding-top: 100%;
-  justify-content: space-evenly;
-  font-size: 1.5rem;
-  align-items: center;
-  margin: 5px;
+  flex-direction: column;
+  justify-content: flex-start; /* Garante que os itens fiquem empilhados */
+  height: 400px; /* Aumenta a altura da div para criar mais espaço para o texto */
 }
 
-.list-item-action-app a{
-  justify-content: center;
-  width: 119px;
-  height: 100%;
-  background: #ffffff;
-  color: #020002;
-  border: 2px solid #472ea1;
-  border-radius: 8px;
-  font-size: 22px;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
 
-.list-item-action-app a:hover{
-  background-color: #85a1da;
-}
 
 
 .footer-fim{
