@@ -10,19 +10,18 @@
 </head>
 <body>
   <header class="header">
-    <a href="#" class="logo">Yuri.</a>
+    <a href="https://www.linkedin.com/in/yuri-deiverson/" target="_blank" class="logo">Yuri.</a>
     <nav class="navbar">
       <a href="#home">Home</a>
       <a href="#sobre">Sobre</a>
       <a href="#projetos">Projetos</a>
-      <a href="https://www.linkedin.com/in/yuri-deiverson/" target="_blank">Contato</a>
     </nav>
   </header>
   <section  class="home" id="home">
     <div class="home-content">
-      <h1>Olá, sou Yuri Deiverson 
-      <h3>Front-End Developer</h3>
-      <p>Um apaixonado Front-end React Developer de Maceió, Alagoas. 📍</p></p>
+      <h1>Olá, sou Yuri Deiverson </h1>
+      <h3 id="dynamic-title">Front-End Developer</h3>
+      <p>Um apaixonado Front-end React Developer de Maceió, Alagoas. 📍</p>
       <div class="skills">
         <a href="#"><i class="bx bxl-html5"></i></a>
         <a href="#"><i class="bx bxl-css3"></i></a>
@@ -31,7 +30,7 @@
         <a href="#"><i class="bx bxl-typescript"></i></a>
       </div>
       <div class="btn-box">
-        <a href="#">Projetos</a>
+        <a href="https://github.com/YuriDeiverson" target="_blank">Projetos</a>
         <a href="https://www.linkedin.com/in/yuri-deiverson/" target="_blank">Contato</a>
       </div>
     </div>
@@ -41,7 +40,7 @@
       <a href="https://www.linkedin.com/in/yuri-deiverson/" target="_blank"><i class="bx bxl-linkedin"></i></a>
     </div>
     <div class="hero">
-      <img src="Imagens/yuri.png" alt="" class="hero-foto"></h1>
+      <img src="Imagens/Yuri.jpg" alt="" class="hero-foto">
     </div>
   </section>
   <div class="container"></div>
@@ -51,9 +50,9 @@
       <img src="Imagens/mesa-com-um-laptop-uma-xicara-de-cafe-e-um-calendario.jpg" alt="">
       <div class="main-section-about">
         <h1 class="about-me">Sobre mim</h1>
-        <h3>Front-End Developer de Maceió, Alagoas</h3>
-          <p> Olá! Sou Yuri, um entusiasta da tecnologia e um desenvolvedor front-end dedicado. Desde que me aprofundei no 
-            mundo do desenvolvimento web, fui cativado pela magia do front-end. Descobrir como as interfaces são criadas e moldadas para proporcionar experiências únicas aos 
+        <h3>Front-end Developer</h3>
+          <p> Olá! Sou Yuri, um entusiasta da tecnologia e um Fullstack Developer dedicado em Front-end. Desde que me aprofundei no 
+            mundo do desenvolvimento, fui cativado pela magia do front-end. Descobrir como as interfaces são criadas e moldadas para proporcionar experiências únicas aos 
             usuários despertou minha paixão por este campo dinâmico e multifacetado.
             <br>
             <br>
@@ -62,7 +61,14 @@
             <br>
             <br>
             Atualmente, minha especialidade reside na criação de interfaces utilizando React, combinado com TypeScript, e minha destreza se estende à implementação de soluções 
-            criativas com HTML, CSS e JavaScript. Estou constantemente buscando aprimorar minhas habilidades e estar atualizado com as tendências mais recentes do setor.
+            criativas. Estou constantemente buscando aprimorar minhas habilidades e estar atualizado com as tendências mais recentes do setor.
+            <br>
+            <br>
+            Iniciando também no estudo de Node.Js com o objetivo de dominar a
+            criação de APIs, integração de sistemas e gerenciamento de servidores,
+            desenvolvendo soluções escaláveis e eficientes onde eu pudesse utilizar
+            esse conhecimento junto ao front-end.
+
             <br>
             <br>
             Estou confiante de que, com minha paixão pela tecnologia e minha habilidade em desenvolvimento front-end, posso fazer uma contribuição valiosa para qualquer equipe. 
@@ -76,48 +82,67 @@
     <section class="projetos" id="projetos">
        <div class="main-projetos">
           <h2>Projetos</h2>
-          <p>em construção</p>
+          <p>(em construção)</p>
         </div>
          <div class="list-wrap">
         <ul class="list">
-                
-              <li class="list-item">
-                  <div class="list-item-action-mkt">
-                      <a href="https://github.com/YuriDeiverson/landpage-mkt" target="_blank">Repository</a>
-                      <a href="https://yurideiverson.github.io/landpage-mkt/" target="_blank">Deploy</a>
-                  </div>    
+          <li class="list-item">
+            <div class="list-item-action">
+                <p class="list-item-title">Site Marketing</p>  <!-- Nome acima da imagem -->
+                <div class="list-item-links">
+                    <a href="https://github.com/YuriDeiverson/landpage-mkt" target="_blank">Código</a>
+                    <a href="https://yurideiverson.github.io/landpage-mkt/" target="_blank">Deploy</a>
+                </div>
+            </div>
+          </li>
+                 
               </li> 
-                
-                <li class="list-item-dois">    
-                    <div class="list-item-action-bot">
-                      <a href="https://github.com/YuriDeiverson/tabuada" target="_blank">Repository</a> 
-                      <a href="https://yurideiverson.github.io/tabuada/" target="_blank">Deploy</a>
-                    </div>    
-                </li>
+
+              <li class="list-item-dois">
+                <div class="list-item-action">
+                    <p class="list-item-title">Tabuada</p>  <!-- Nome acima da imagem -->
+                    <div class="list-item-links">
+                        <a href="https://github.com/YuriDeiverson/tabuada" target="_blank">Código</a>
+                        <a href="https://yurideiverson.github.io/tabuada/" target="_blank">Deploy</a>
+                    </div>
+                </div>
+              </li>
+
+              <li class="list-item-tres">
+                <div class="list-item-action">
+                    <p class="list-item-title">Dashboard</p>  <!-- Nome acima da imagem -->
+                    <div class="list-item-links">
+                        <a href="https://github.com/YuriDeiverson/dashboard1" target="_blank">Código</a>
+                        <a href="https://yurideiverson.github.io/dashboard1/" target="_blank">Deploy</a>
+                    </div>
+                </div>
+              </li>
           
-                <li class="list-item-tres">   
-                    <div class="list-item-action-dash">
-                      <a href="https://github.com/YuriDeiverson/dashboard1" target="_blank">Repository</a> 
-                      <a href="https://yurideiverson.github.io/dashboard1/" target="_blank">Deploy</a>
-                    </div>    
-                </li>    
-                <li class="list-item-quatro">   
-                  <div class="list-item-action-desenhar">
-                    <a href="https://github.com/YuriDeiverson/Desenhar" target="_blank">Repository</a> 
-                    <a href="https://yurideiverson.github.io/Desenhar/" target="_blank">Deploy</a>
-                  </div>    
-              </li>  
-              <li class="list-item-cinco">   
-                <div class="list-item-action-adv">
-                  <a href="https://github.com/YuriDeiverson/Advocacia-form" target="_blank">Repository</a> 
-                  <a href="https://yurideiverson.github.io/Advocacia-form/" target="_blank">Deploy</a>
-                </div>    
+              <li class="list-item-quatro">
+                <div class="list-item-action">
+                    <p class="list-item-title">Desenhar em pixel</p>  <!-- Nome acima da imagem -->
+                    <div class="list-item-links">
+                        <a href="https://github.com/YuriDeiverson/Desenhar" target="_blank">Código</a>
+                        <a href="https://yurideiverson.github.io/Desenhar/" target="_blank">Deploy</a>
+                    </div>
+                </div>
+              </li>
+
+              <li class="list-item-cinco">  
+                <div class="list-item-action">
+                  <p class="list-item-title">Landpage Advocacia</p>  <!-- Nome acima da imagem -->
+                  <div class="list-item-links">
+                    <a href="https://github.com/YuriDeiverson/Advocacia-form" target="_blank">Código</a> 
+                    <a href="https://yurideiverson.github.io/Advocacia-form/" target="_blank">Deploy</a>
+                  </div>   
             </li>
             <li class="list-item-seis">   
-              <div class="list-item-action-app">
-                <a href="https://github.com/YuriDeiverson/app-meteorologico" target="_blank">Repository</a> 
-                <a href="https://yurideiverson.github.io/app-meteorologico/" target="_blank">Deploy</a>
-              </div>   
+              <div class="list-item-action">
+                <p class="list-item-title">App Meteorlogico</p>  <!-- Nome acima da imagem -->
+                <div class="list-item-links">
+                  <a href="https://github.com/YuriDeiverson/app-meteorologico target="_blank">Código</a> 
+                  <a href="https://yurideiverson.github.io/app-meteorologico/" target="_blank">Deploy</a>
+                </div>   
           </li>      
 
         </ul>
@@ -136,5 +161,13 @@
 
     </div>
   </footer>
+
+
+
+  <script src="script.js"></script>
+
+
 </body>
 </html>
+
+
