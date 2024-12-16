@@ -5,81 +5,13 @@
   font-family: 'Times New Roman', Times, serif, "Arial", sans-serif;;
 }
 
-@media (max-width: 768px) {
-  .home {
-    display: flex;
-    flex-direction: column; /* Coloca os itens em coluna no mobile */
-    justify-content: center; /* Centraliza os itens */
-    text-align: center; /* Centraliza o texto */
-    padding: 20px; /* Ajusta o padding para mobile */
-  }
-
-  .home-content {
-    margin-top: 20px;
-    text-align: center; /* Centraliza o texto no mobile */
-  }
-
-  .hero {
-    margin-top: 100px; /* Dá espaço acima da foto */
-    display: flex;
-    justify-content: center; /* Centraliza a foto */
-    margin-bottom: 20px; /* Dá espaço abaixo da foto */
-  }
-  
-  .home-sci a {
-    display: none !important;
-  }
-
-  /* Ajuste o tamanho da foto para o mobile */
-  .hero-foto {
-    width: 100px; /* Ajusta o tamanho da foto no mobile */
-    height: 150px;
-    border-radius: 50%; /* Foto circular */
-  }
-  
-  .main-section {
-    padding: 10px 15px;  /* Reduzido o padding superior para diminuir a margem */
-    margin-top: -200px;    /* Diminui a brecha entre a foto (que foi escondida) e o texto "Sobre mim" */
-  }
-
-  .main-section img {
-    display: none; /* Esconde a imagem no mobile */
-  }
-
-  .main-section-about {
-    text-align: left; /* Alinha o texto à esquerda */
-    font-size: 1.5rem; /* Aumenta o tamanho da fonte no mobile */
-    margin-top: 20px;
-    padding: 10px; /* Padding dentro da div para espaçamento */
-  }
-
-  .about-me {
-    font-size: 2rem; /* Aumenta o tamanho da fonte do título */
-    margin-bottom: 15px; /* Distância entre o título e o parágrafo */
-  }
-
-  .main-section-about p {
-    line-height: 1.6;
-    font-size: 1.2rem; /* Aumenta o tamanho do texto */
-    max-width: 100%; /* Permite o texto ocupar toda a largura */
-    margin: 0; /* Remove margens extras */
-  }
-
-  .fade-in {
-    opacity: 0;
-    transition: opacity 1s;
-  }
-  
-  .fade-in.visible {
-    opacity: 1;
-  }
-}
-
 body {
   width: 100%;
   scrollbar-color: #8e8e8e #fff;
   scrollbar-width: thin;
-
+  margin: 0; /* Pode garantir que não há margens extras que estão movendo o conteúdo para fora */
+  padding: 0;
+  margin-top: 60px; /* Ajuste se necessário para não sobrepor o conteúdo */
 }
 
 .header {
@@ -95,8 +27,10 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 200;
+  z-index: 1000;  /* Garante que o cabeçalho fique no topo */
+  transition: top 0.3s;  /* Adiciona uma animação suave */
 }
+
 
 .logo{
   font-size: 25px;
@@ -118,13 +52,44 @@ body {
   color: #00abf0;
 }
 
+/* Estilo para o botão de menu sanduíche */
+.menu-btn {
+  display: none; /* Inicialmente escondido, será mostrado no mobile */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;  /* Ajustando para ele ficar um pouco abaixo do topo */
+  right: 20px; /* Colocando o botão no canto direito */
+  z-index: 100;
+}
+
+.menu-bar {
+  height: 4px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.navbar {
+  display: flex;
+  gap: 20px;
+}
+
 .home{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 100px 10%; /* Ajusta o espaçamento do conteúdo */
-  margin-top: 100px; /* Adiciona um espaçamento no topo */
-  
+  padding: 100px 10%; /* Pode afetar a posição do conteúdo e do ícone */
+  margin-top: 100px;
+  position: relative;
+  overflow: hidden; /* Pode ocultar o botão se ele estiver fora da área visível */
+
 }
 
 .home-content{
@@ -566,4 +531,126 @@ body {
 
 .footer-socials a:hover::before {
   width: 100%;
+}
+
+
+
+@media (max-width: 768px) {
+  .home {
+    display: flex;
+    flex-direction: column; /* Coloca os itens em coluna no mobile */
+    justify-content: center; /* Centraliza os itens */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px; /* Ajusta o padding para mobile */
+  }
+  /* Exibindo o botão de menu no mobile */
+  .menu-btn {
+    display: flex;
+  }
+
+
+   /* Escondendo os links de navegação no mobile */
+  /* Inicialmente, escondendo os links */
+  .navbar {
+    display: none;
+    position: absolute;
+    top: 100px; /* Ajustando a posição */
+    right: 10px;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+
+  /* Exibindo os links de navegação quando a classe 'active' é adicionada */
+  .navbar.active {
+    display: flex;
+  }
+
+  /* Estilo do X para fechar o menu */
+  .navbar.active + .menu-btn .menu-bar:nth-child(1) {
+    transform: rotate(45deg);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .navbar.active + .menu-btn .menu-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar.active + .menu-btn .menu-bar:nth-child(3) {
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .home-content {
+    margin-top: 20px;
+    text-align: center; /* Centraliza o texto no mobile */
+  }
+
+  .hero {
+    margin-top: 100px; /* Dá espaço acima da foto */
+    display: flex;
+    justify-content: center; /* Centraliza a foto */
+    margin-bottom: 20px; /* Dá espaço abaixo da foto */
+  }
+
+  .skills{
+    justify-content: center;
+    right: 5%;
+  }
+  
+  .home-sci a {
+    display: none !important;
+  }
+
+  /* Ajuste o tamanho da foto para o mobile */
+  .hero-foto {
+    width: 350px; /* Ajusta o tamanho da foto no mobile */
+    height: 350px;
+    border-radius: 50%; /* Foto circular */
+  }
+  
+  .main-section {
+    padding: 10px 15px;  /* Reduzido o padding superior para diminuir a margem */
+    margin-top: -200px;    /* Diminui a brecha entre a foto (que foi escondida) e o texto "Sobre mim" */
+  }
+
+  .main-section img {
+    display: none; /* Esconde a imagem no mobile */
+  }
+
+  .main-section-about {
+    text-align: left; /* Alinha o texto à esquerda */
+    font-size: 1.5rem; /* Aumenta o tamanho da fonte no mobile */
+    margin-top: 20px;
+    padding: 10px; /* Padding dentro da div para espaçamento */
+  }
+
+  .about-me {
+    font-size: 2rem; /* Aumenta o tamanho da fonte do título */
+    margin-bottom: 15px; /* Distância entre o título e o parágrafo */
+  }
+
+  .main-section-about p {
+    line-height: 1.6;
+    font-size: 1.2rem; /* Aumenta o tamanho do texto */
+    max-width: 100%; /* Permite o texto ocupar toda a largura */
+    margin: 0; /* Remove margens extras */
+  }
+
+  .fade-in {
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+  }
 }
