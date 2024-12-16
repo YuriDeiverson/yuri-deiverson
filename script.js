@@ -1,56 +1,86 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Seleciona todos os links de navegação com ID correspondentes
+  // Seção de navegação com rolagem suave
   const links = document.querySelectorAll('.navbar a');
 
-  // Adiciona o comportamento de rolagem suave a cada link
   links.forEach(link => {
     link.addEventListener('click', function (event) {
-      // Impede o comportamento padrão do link
       event.preventDefault();
-
-      // Pega o ID do link (exemplo: #home, #sobre, #projetos)
       const targetId = link.getAttribute('href').substring(1);
       const targetElement = document.getElementById(targetId);
 
-      // Rola suavemente para o topo do elemento
-      window.scrollTo({
-        top: targetElement.offsetTop - 10, // Ajusta a posição, se necessário
-        behavior: 'smooth' // Aplica o efeito de rolagem suave
-      });
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 10,
+          behavior: 'smooth'
+        });
+      }
     });
   });
-});
 
-// Seleciona o elemento com o título dinâmico
-const titleElement = document.getElementById("dynamic-title");
+  // Seção de alteração dinâmica de título
+  const titleElement = document.getElementById("dynamic-title");
+  if (titleElement) {
+    const titles = ["Fullstack Developer", "Front-end Engineer"];
+    let index = 0;
 
-// Lista de títulos para alternar
-const titles = ["Fullstack Developer", "Front-end Engineer"];
-
-// Índice inicial
-let index = 0;
-
-// Função para alternar o título
-function changeTitle() {
-  // Incrementa o índice, retornando ao início quando atingir o fim do array
-  index = (index + 1) % titles.length;
-
-  // Atualiza o texto do título
-  titleElement.textContent = titles[index];
-}
-
-// Alterna o título a cada 2 segundos (2000 milissegundos)
-setInterval(changeTitle, 2000);
-
-
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+    function changeTitle() {
+      index = (index + 1) % titles.length;
+      titleElement.textContent = titles[index];
     }
-  });
-}, { threshold: 0.5 });
 
-document.querySelectorAll('.fade-in').forEach(element => {
-  observer.observe(element);
+    setInterval(changeTitle, 2000);
+  }
+
+  // Seção de fade-in ao entrar na tela
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.fade-in').forEach(element => {
+    observer.observe(element);
+  });
+
+// Selecionando os elementos
+const btnMenu = document.getElementById('btn-menu');
+const navbar = document.querySelector('.navbar');
+
+// Adicionando o evento de clique no botão de menu
+btnMenu.addEventListener('click', () => {
+  navbar.classList.toggle('active');  // Alterna a classe 'active' para mostrar ou esconder o menu
+
+
+let lastScrollTop = 0; // Variável para armazenar a última posição do scroll
+const header = document.querySelector('.header');
+const menuButton = document.getElementById('btn-menu');
+
+
+window.addEventListener('scroll', function () {
+  // Pega a posição atual do scroll
+  const currentScroll = window.scrollY || document.documentElement.scrollTop;
+
+  // Verifica se o scroll foi para baixo ou para cima
+  if (currentScroll > lastScrollTop) {
+    // Se o scroll foi para baixo, esconde o header e fecha o menu
+    header.style.top = '-60px'; // Ajuste o valor conforme a altura do seu header
+    if (navbar.classList.contains('active')) {
+      navbar.classList.remove('active'); // Fecha o menu
+    }
+  } else {
+    // Se o scroll foi para cima, mostra o header
+    header.style.top = '0';
+  }
+
+  // Atualiza a última posição do scroll
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para evitar valores negativos no scroll
 });
+
+menuButton.addEventListener('click', function () {
+  navbar.classList.toggle('active'); // Alterna a visibilidade do menu
+
+});
+
+})});
